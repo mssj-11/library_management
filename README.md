@@ -12,7 +12,7 @@ Sistema Web de Registro y préstamo de libros.
 
 ##  Estructura de Archivos y Carpetas
 
-```sh
+```
 library_management/
 ├── config/
 │   ├── database.php              # Configuración de la base de datos
@@ -20,13 +20,20 @@ library_management/
 │   └── session.php               # Manejo de sesiones
 ├── controllers/
 │   ├── auth.php                  # Controlador para login y registro
+│   ├── user.php                  # Controlador actualizar datos del usuario
 │   ├── books.php                 # Controlador para CRUD de libros
-│   └── contact.php               # Controlador para formulario de contacto
+│   ├── authors.php               # Controlador para CRUD de autores
+│   ├── categories.php            # Controlador para CRUD de categorías
+│   ├── rentals.php               # Controlador para CRUD de rentas
+│   └── reports.php               # Controlador para generar reportes PDF y Excel
 ├── models/
 │   ├── user.php                  # Modelo de usuarios
 │   ├── book.php                  # Modelo de libros
-│   └── contact.php               # Modelo de contacto
+│   ├── author.php                # Modelo de autores
+│   ├── category.php              # Modelo de categorías
+│   └── rental.php                # Modelo de rentas
 ├── templates/
+│   ├── alerts.php                # Plantilla de mensajes
 │   ├── navbar.php                # Plantilla del navbar
 │   ├── footer.php                # Plantilla del footer
 │   ├── layout.php                # Plantilla principal
@@ -35,27 +42,43 @@ library_management/
 │   │   └── styles.css            # Estilos personalizados
 │   ├── js/
 │   │   └── scripts.js            # Scripts personalizados
-│   └── index.php                 # Página principal (Home)
+│   └── home.php                  # Página principal (Home)
 ├── views/
 │   ├── auth/
 │   │   ├── login.php             # Vista de login
 │   │   └── register.php          # Vista de registro
+│   ├── user/
+│   │   ├── profile.php           # Vista con Formulario para editar datos de usuario
+│   │   └── settings.php          # Vista con Formulario para editar la contraseña
 │   ├── books/
-│   │   ├── list.php              # Listado de libros
 │   │   ├── create.php            # Formulario para agregar libros
-│   │   └── edit.php              # Formulario para editar libros
-│   ├── contact/
-│   │   └── form.php              # Vista del formulario de contacto
+│   │   ├── list.php              # Listado de libros
+│   │   ├── edit.php              # Formulario para editar libros
+│   │   ├── view.php              # Ver datos del libro
+│   ├── authors/
+│   │   ├── create.php            # Formulario para agregar autores
+│   │   ├── list.php              # Listado de autores
+│   │   ├── edit.php              # Formulario para editar autores
+│   ├── categories/
+│   │   ├── create.php            # Formulario para agregar categorías
+│   │   ├── list.php              # Listado de categorías
+│   │   ├── edit.php              # Formulario para editar categorías
+│   ├── rentals/
+│   │   ├── create.php            # Formulario para registrar una renta
+│   │   ├── list.php              # Listado de rentas
+│   │   ├── edit.php              # Formulario para editar rentas
 │   └── errors/
 │       └── 404.php               # Página de error 404
 ├── storage/
 │   ├── reports/
 │   │   └── example_report.pdf    # Carpeta para guardar reportes generados
-│   └── uploads/                  # Carpeta para subir archivos (si es necesario)
+│   ├── img_books/                # Carpeta para subir imágenes de libros
 ├── fpdf/
-│   └── fpdf.php                  # Biblioteca FPDF
+│   └── fpdf.php                  # Biblioteca FPDF para reportes en PDF
+├── index.php                     # Configuración para rutas amigables
 ├── .htaccess                     # Configuración para rutas amigables
 └── README.md                     # Descripción del proyecto
+
 ```
 
 
